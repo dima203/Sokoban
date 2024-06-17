@@ -54,6 +54,21 @@ class Map:
             for wall in self.__walls:
                 if wall.get_pos() == (new_x, new_y):
                     return False
+            for box in self.__boxes:
+                if (box_pos := box.get_pos()) == (new_x, new_y):
+                    match direction:
+                        case 0:
+                            box.move_up()
+                        case 1:
+                            box.move_left()
+                        case 2:
+                            box.move_down()
+                        case 3:
+                            box.move_right()
+                    if box.get_pos() != box_pos:
+                        return True
+                    else:
+                        return False
         return True
 
     def check_end(self) -> bool:

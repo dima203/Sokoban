@@ -4,10 +4,10 @@ import pygame
 class InputSystem:
     def __init__(self) -> None:
         self.__keys = {
-            pygame.K_w: 'move_up',
-            pygame.K_a: 'move_left',
-            pygame.K_s: 'move_down',
-            pygame.K_d: 'move_right',
+            pygame.K_UP: 'move_up',
+            pygame.K_LEFT: 'move_left',
+            pygame.K_DOWN: 'move_down',
+            pygame.K_RIGHT: 'move_right',
             pygame.K_ESCAPE: 'close_game'
         }
 

@@ -39,7 +39,8 @@ class Game:
                 Wall(self.__drawer, 300, 350, 50),
             ],
             [
-                BoxPlace(self.__drawer, 200, 150, 50)
+                BoxPlace(self.__drawer, 150, 150, 50),
+                BoxPlace(self.__drawer, 250, 150, 50)
             ]
         )
 
@@ -51,8 +52,9 @@ class Game:
         self.__input_system.add_callback('move_right', self.__player.move_right)
         self.__input_system.add_callback('close_game', self.__stop)
         self.__map.add_player(self.__player)
-        box = Box(self.__drawer, 200, 200, 50, self.__map)
-        self.__map.add_boxes([box])
+        box1 = Box(self.__drawer, 200, 200, 50, self.__map)
+        box2 = Box(self.__drawer, 200, 250, 50, self.__map)
+        self.__map.add_boxes([box1, box2])
 
     def run(self) -> None:
         pygame.init()
